@@ -24,7 +24,12 @@ class RecipeService
 
     public function getAll() 
     {
-        return $this->recipeRepo->findAll();
+        return $this->recipeRepo->findAllInArray();
+    }
+
+    public function getAllGreaterThanUseBy(string $useBy)
+    {
+        return $this->recipeRepo->findAllGreaterThanUseBy($useBy);
     }
 
     public function create(array $data) 

@@ -21,7 +21,9 @@ class IngredientService
 
     public function getAll()
     {
-        return $this->ingRepo->findAll();
+        $result = $this->ingRepo->findAllInArray();
+        
+        return $result;
     }
 
     public function create(array $data)

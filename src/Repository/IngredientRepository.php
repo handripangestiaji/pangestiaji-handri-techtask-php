@@ -6,6 +6,7 @@ use App\Entity\Ingredient;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use App\Contract\IngredientRepositoryInterface;
+use Doctrine\ORM\Query;
 
 /**
  * @method Ingredient|null find($id, $lockMode = null, $lockVersion = null)
@@ -28,6 +29,14 @@ class IngredientRepository extends ServiceEntityRepository implements Ingredient
         $ingredient->setBestBefore(new \DateTime($data['best-before']));
 
         return $ingredient;
+    }
+
+    public function findAllInArray(): array
+    {
+        $query = $this->createQueryBuilder('i')
+            ->getQuery();
+
+        return $query->getResult(Query::HYDRATE_ARRAY);
     }
 
     // /**
