@@ -36,3 +36,6 @@ services:
 
     App\Contract\FooRepositoryInterface:
         class: App\Repository\FooRepository
+
+    App\Contract\IngredientRepositoryInterface:
+        class: App\Repository\IngredientRepository
