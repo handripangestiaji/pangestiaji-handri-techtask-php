@@ -39,3 +39,6 @@ services:
 
     App\Contract\IngredientRepositoryInterface:
         class: App\Repository\IngredientRepository
+    
+    App\Contract\RecipeRepositoryInterface:
+        class: App\Repository\RecipeRepository
