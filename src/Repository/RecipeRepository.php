@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Recipe;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use App\Contract\RecipeRepositoryInterface;
 
 /**
  * @method Recipe|null find($id, $lockMode = null, $lockVersion = null)
@@ -12,7 +13,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  * @method Recipe[]    findAll()
  * @method Recipe[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class RecipeRepository extends ServiceEntityRepository
+class RecipeRepository extends ServiceEntityRepository implements RecipeRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
