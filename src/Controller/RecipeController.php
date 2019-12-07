@@ -27,7 +27,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route("/", name="index")
+     * @Route("/test", name="index")
      */
     public function index()
     {
@@ -56,7 +56,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * @Route(/get)
+     * @Route("/get")
      */
     public function getAll()
     {

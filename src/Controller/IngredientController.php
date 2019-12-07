@@ -54,6 +54,9 @@ class IngredientController extends AbstractController
         return $this->sendSuccessResponse([], 'Data has been insert successfully');
     }
 
+    /**
+     * @Route("/get")
+     */
     public function getAll()
     {
         $result = $this->ingService->getAll();
